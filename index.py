@@ -9,7 +9,7 @@ data = json.loads(response.read())
 usefull = data['computer']['Linux']
 
 os.system(
-    'dpkg -s plexmediaserver 2>/dev/null || echo "Version: none" | grep Version')
+    '(dpkg -s plexmediaserver 2>/dev/null || echo "Version: none") | grep Version')
 
 print "Newest version:", usefull['version']
 print "Release date:", datetime.utcfromtimestamp(
