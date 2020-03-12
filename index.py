@@ -2,7 +2,6 @@ import sys
 import os
 import json
 import urllib
-import pip.operations
 from datetime import datetime
 
 response = urllib.urlopen("https://plex.tv/pms/downloads/5.json")
