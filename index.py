@@ -34,7 +34,7 @@ ok = raw_input("Correct? [Y/n]: ")
 if ok == 'n' or ok == 'N':
 	exit()
 
-os.system('wget '+usefull['releases'][0]['url'] +
+os.system('wget '+usefull['releases'][version]['url'] +
           ' -O plexmediaserver-'+usefull['version'])
 
 os.system('sudo dpkg -i '+'plexmediaserver-'+usefull['version'])
