@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import sys
 import os
 import json
@@ -7,6 +8,10 @@ from datetime import datetime
 response = urllib.urlopen("https://plex.tv/pms/downloads/5.json")
 data = json.loads(response.read())
 usefull = data['computer']['Linux']
+
+if (sys.argv[1] if sys.argv[1] else False) == '-h':
+    print "usage: platform 32/64 (default: debian 32)"
+    exit()
 
 os.system(
     '(dpkg -s plexmediaserver 2>/dev/null || echo "Version: none") | grep Version')
